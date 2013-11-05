@@ -1,0 +1,23 @@
+// = 
+
+// = LIENS
+%link-wrapper{
+  cursor:pointer;
+}
+
+/* Skip-links */
+%skip-links {
+  position: absolute;
+  a {
+    position: absolute;
+    left: -9999px;
+    padding: 0.5em;
+    background: black;
+    color: white;
+    text-decoration: none;
+    &:focus {
+      position: static;
+    }
+  }
+}
+

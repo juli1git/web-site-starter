@@ -1,0 +1,62 @@
+// = REQUIRES =========
+//@import "compass/css3";
+// ====================
+
+// ===========================================================
+// = FONT FACE
+// =========================================================== 
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal)  {
+  @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$font-family}') format('svg');
+      font-weight: $weight;
+      font-style: $style;
+  }
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.svg') format('svg');
+    }
+  }  
+}
+// ===========================================================
+// = TRIANGLES
+// ===========================================================
+@mixin triangle($direction:"up", $color:#000, $size:100px) {
+  height: 0;
+  width: 0;
+  border-style: solid;
+  @if($direction == "up") {
+      border-color: transparent transparent $color transparent;
+      border-width: 0px $size $size $size;
+  }
+  @if($direction == "down") {
+     border-color: $color transparent transparent transparent;
+     border-width: $size $size 0px $size;
+  }
+  @if($direction == "left") {
+      border-color: transparent $color transparent transparent;
+      border-width: $size $size $size 0px;
+  }
+  @if($direction == "right") {
+     border-color: transparent transparent transparent $color;
+     border-width: $size 0px $size $size;
+  }
+}
+
+
+// ===========================================================
+// = GRADIENTS 
+// ===========================================================
+
+
+// = linear gradient cross Browser
+@mixin linear-gradient($start,$end){
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient($start,$end));
+  @include filter-gradient($start,$end,vertical);
+}
