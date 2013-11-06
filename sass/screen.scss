@@ -1,7 +1,17 @@
-@import "ressources/_ressources"; // ressources globales
-@import "modules/_modules"; // modules
-@import "externals/_externals"; // composants externes
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
 
-@import "variables"; // variables de configuration du projet 
+@import "variables";              // variables de configuration du projet 
+
+@import "ressources/_ressources"; // ressources globales
+@import "modules/_modules";       // modules
+@import "externals/_externals";   // composants externes
+
 
 @import "templates/_templates";
+
+
+.row{
+  //@include font-size(12px);
+}

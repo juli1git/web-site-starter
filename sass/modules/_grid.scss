@@ -1,22 +1,29 @@
 // breakpoints 
-$small-screen : 768px;
-$medium-screen : 1024px;
-$large-screen : 1200px;
-$extra-large-screen : 1980px;
+$small-screen : 768px !default;
+$medium-screen : 1024px!default;
+$large-screen : 1200px !default;
+$extra-large-screen : 1980px !default;
 
 // media queries
-
+$small: "only screen and (max-width: #{$small-screen})";
+$medium: "only screen and (max-width: #{$medium-screen})";
+$large: "only screen and (max-width: #{$large-screen})";
+$extra-large: "only screen and (max-width: #{$extra-large-screen})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
 
 // Grid variables
 $default-float : left !default;
 $opposite-direction : right !default;
+
 $total-columns: 12 !default;
 $row-width : 980px !default;
 $column-gutter : 10px !default;
+
 $collapsed-grid : false !default;
 
-// Grid Function
 
+// Grid Function
 @function gridCalc($col-number, $total-columns) {
   @return percentage(($col-number / $total-columns));
 }
@@ -113,6 +120,8 @@ $collapsed-grid : false !default;
 }
 
 // génération des classes html correspondantes
+
+// Defaut = desktop (lg)
 .row {
   @include grid-row();
   .row {
@@ -122,10 +131,31 @@ $collapsed-grid : false !default;
   *[class^="col-"] + *[class^="col-"]:last-child { float: $opposite-direction; }
 }
 @for $i from 1 through $total-columns {
-   .col#{-$i} { @include grid-column($i,$collapse:$collapsed-grid);}
+   .col-lg-#{$i} { @include grid-column($i,$collapse:$collapsed-grid);}
 }
 
 
+// small classes
+@media #{$small} {
+  //*[class^="col-"] { @include grid-column($columns:false); }
+  @for $i from 1 through $total-columns {
+    .col-sm-#{$i} { @include grid-column($i,$collapse:$collapsed-grid);}
+  }
+}
 
 
+// medium classes
+@media #{$medium} {
+  //*[class^="col-"] { @include grid-column($columns:false); }
+  @for $i from 1 through $total-columns {
+    .col-md-#{$i} { @include grid-column($i,$collapse:$collapsed-grid);}
+  }
+}
 
+// medium classes
+@media #{$extra-large} {
+  //*[class^="col-"] { @include grid-column($columns:false); }
+  @for $i from 1 through $total-columns {
+    .col-xl-#{$i} { @include grid-column($i,$collapse:$collapsed-grid);}
+  }
+}
