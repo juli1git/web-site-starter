@@ -1,0 +1,7 @@
+/**
+ * REM function
+ */
+$rem-base: 0.625 !default;
+@function remCalc($pxWidth) {
+  @return $pxWidth / $rem-base * 1rem;
+}

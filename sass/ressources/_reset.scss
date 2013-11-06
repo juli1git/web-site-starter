@@ -415,9 +415,15 @@ table {
 
 
 /*
-My Reset
+My Resets
 */
+* {
+  @include box-sizing(border-box);
+}
 html{
   -webkit-min-device-pixel-ratio:0;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+body{
+  font-size: 62.5%;
 }
