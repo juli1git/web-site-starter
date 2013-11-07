@@ -103,8 +103,8 @@ blockquote {
 a {
 	@include link-colors($link-color, $link-color-hover,$link-color,$link-color, $link-color-hover);
 	text-decoration : none;
-	border-bottom : 1px solid $link-color;
+	border-bottom : 1px solid;
 	&:hover{
-	  border-bottom : 1px dotted $link-color;
+	  border-bottom : 1px dotted;
 	}
 }

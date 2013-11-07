@@ -1,29 +1,27 @@
+// ==============================
 // MODULE DE NAVIGATIONS
+// ==============================
 
+
+
+// ------------------------------
 // VARIABLES
+// ------------------------------
 $nav-height : 70px !default;
 $nav-font-family : $font-family-headings !default; 
 $nav-font-size : em(14px) !default;
 $background-nav : #FFF !default;
 
-// HEADER NAVIGATIONS
-.nav{
-	height : $nav-height;
-	background : $background-nav;
-	.logo{
-    a{
-      height : 100%;
-      width:100%;
-      display:inline-block;
-      border-bottom : none;
-    }
-    img{
-      vertical-align : middle;
-    }
-  }
-}
+// ------------------------------
+// FUNCTIONS
+// ------------------------------
+// ------------------------------
+// MIXINS 
+// ------------------------------
 
-// Proprietes des listes
+// ------------------------------
+// EXTENDS
+// ------------------------------
 // list Pattern Navigation 
 %nav-list{
     margin:0;
@@ -57,6 +55,28 @@ $background-nav : #FFF !default;
   }
 }
 
+// ------------------------------
+// STYLES
+// ------------------------------
+
+// HEADER NAVIGATIONS
+.nav{
+	height : $nav-height;
+	background : $background-nav;
+	.logo{
+    a{
+      height : 100%;
+      width:100%;
+      display:inline-block;
+      border-bottom : none;
+    }
+    img{
+      vertical-align : middle;
+    }
+  }
+}
+
+// Proprietes
 
 .nav-list--default{
   @extend %nav-list; 
