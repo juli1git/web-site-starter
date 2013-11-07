@@ -75,6 +75,11 @@
   @include filter-gradient($start,$end,vertical);
 }
 
+// ===========================================================
+// = MESURES 
+// ===========================================================
+
+
 
 // Listes
 // -------------------------------------------------------
@@ -105,10 +110,6 @@
 }
 
 
-// Advanced typography settings
-// -------------------------------------------------------
-
-// Get advanced with type if needed for ligatures etc...
 
 @mixin advancedtype {
   //font-variant-ligatures: contextual;         // Set the default for ligatures

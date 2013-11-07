@@ -2,12 +2,9 @@
 
 // VARIABLES
 $nav-height : 70px !default;
-$nav-item-max-width : 100px !default; 
 $nav-font-family : $font-family-headings !default; 
-$nav-font-size : 12px !default;
+$nav-font-size : em(14px) !default;
 $background-nav : #FFF !default;
-
-
 
 // HEADER NAVIGATIONS
 .nav{
@@ -18,23 +15,25 @@ $background-nav : #FFF !default;
       height : 100%;
       width:100%;
       display:inline-block;
-      
+      border-bottom : none;
     }
     img{
       vertical-align : middle;
     }
   }
-  ul{
+}
+
+// Proprietes des listes
+// list Pattern Navigation 
+%nav-list{
     margin:0;
     padding:0;
-    float:right;
     width:auto;
     li{
       list-style-type: none ;
       float:left;
       position: relative;
       display: table;
-      max-width:$nav-item-max-width;
       height : $nav-height;
       a{
         display: table-cell;
@@ -44,20 +43,30 @@ $background-nav : #FFF !default;
         padding:0px 10px;
         font-family : $font-family-headings;
         font-size: $nav-font-size;
+        border-bottom : none;
         &:hover{
           
         }
         &.active{
-          border-bottom: 4px solid #000;
-          position: relative;
-          top: 2px;
+          
         }
       }
-    }
+  }
+  &.right{
+    float:right;
   }
 }
 
 
+.nav-list--default{
+  @extend %nav-list; 
+}
+.nav-list--right{
+  @extend %nav-list;
+  float:right; 
+}
+
+// Comportements
 .nav-fixed{
   position : fixed;
   top:0px;
