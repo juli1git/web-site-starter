@@ -1,17 +1,20 @@
+// COMPASS IMPORTS
+@import "compass/typography/links/link-colors";
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/utilities";
 
-@import "variables";              // variables de configuration du projet 
+// variables de configuration du projet 
+@import "variables";              
 
-@import "ressources/_ressources"; // ressources globales
-@import "modules/_modules";       // modules
-@import "externals/_externals";   // composants externes
+// ressources globales
+@import "ressources/_ressources"; 
 
+// modules
+@import "modules/_modules";      
 
+// composants externes 
+@import "externals/_externals";   
+
+// styles du projet
 @import "templates/_templates";
-
-
-.row{
-  //@include font-size(12px);
-}

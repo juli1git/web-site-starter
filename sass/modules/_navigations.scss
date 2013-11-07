@@ -1,0 +1,70 @@
+// MODULE DE NAVIGATIONS
+
+// VARIABLES
+$nav-height : 70px !default;
+$nav-item-max-width : 100px !default; 
+$nav-font-family : $font-family-headings !default; 
+$nav-font-size : 12px !default;
+$background-nav : #FFF !default;
+
+
+
+// HEADER NAVIGATIONS
+.nav{
+	height : $nav-height;
+	background : $background-nav;
+	.logo{
+    a{
+      height : 100%;
+      width:100%;
+      display:inline-block;
+      
+    }
+    img{
+      vertical-align : middle;
+    }
+  }
+  ul{
+    margin:0;
+    padding:0;
+    float:right;
+    width:auto;
+    li{
+      list-style-type: none ;
+      float:left;
+      position: relative;
+      display: table;
+      max-width:$nav-item-max-width;
+      height : $nav-height;
+      a{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        height: 100%;
+        padding:0px 10px;
+        font-family : $font-family-headings;
+        font-size: $nav-font-size;
+        &:hover{
+          
+        }
+        &.active{
+          border-bottom: 4px solid #000;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+
+
+.nav-fixed{
+  position : fixed;
+  top:0px;
+  left:0px;
+  width:100%;  
+  z-index:1;
+  + *{
+    padding-top:$nav-height
+  }
+}

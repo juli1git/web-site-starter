@@ -1,5 +1,31 @@
-// SET-UP CORE FONT SIZING AND RHYTHM
+// TYPOGRAPHIE GENERALE
 
+
+// VARIABLES
+$base-font-size             : 100% !default;         // Sets the browser default size. Shouldn't need to change this.
+$base-line-height           : 1em  !default;          // Baseline grid. Set to a sensible, small size.
+$round-to-nearest-half-line : false !default;          // Round the line height to the nearest half line height. Off by default
+
+// Links
+$link-color : tint(blue,10%) !default;
+$link-color-hover : tint(blue,50%) !default;
+
+// Font Family
+$font-family-base : "Helvetica",Arial,sans-serif !default;
+$font-family-headings : "Helvetica",Arial,sans-serif !default;
+
+
+
+
+html{
+  -webkit-min-device-pixel-ratio:0;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+body{
+  font-size: $base-font-size;
+  line-height : $base-line-height;
+  font-family : $font-family-base; 
+}
 
 // Default Sizing and spacing
 // ------------------------------------------------------------
@@ -14,7 +40,7 @@ h1 {
       
 h2 { 
   @include adjust-font-size-to(30px); 
-  margin: rhythm(4, 30px) 0 rhythm(2, 30px) 0;        // 4 lines above / 2 lines below, based on font size 
+  margin: rhythm(1, 30px) 0 rhythm(1, 30px) 0;        // 4 lines above / 2 lines below, based on font size 
 }
 
 h3 { 
@@ -70,4 +96,9 @@ blockquote {
     @include adjust-font-size-to(20px); 
     margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0;    //  3 lines above / 3 lines below, based on font size
   }
+}
+
+// Links
+a {
+	@include link-colors($link-color, $link-color-hover,$link-color,$link-color, $link-color-hover)
 }

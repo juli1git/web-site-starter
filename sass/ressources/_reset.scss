@@ -6,9 +6,7 @@
 
 // VARIABLES
 
-$base-font-size             : 100% !default;         // Sets the browser default size. Shouldn't need to change this.
-$base-line-height           : 8px !default;          // Baseline grid. Set to a sensible, small size.
-$round-to-nearest-half-line : false !default;          // Round the line height to the nearest half line height. Off by default
+
 
 
 // ----------------------------------
@@ -425,18 +423,7 @@ table {
     border-spacing: 0;
 }
 
-
-// ----------------------------------
-// My Resets
-// ----------------------------------
 * {
   @include box-sizing(border-box);
 }
-html{
-  -webkit-min-device-pixel-ratio:0;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-body{
-  font-size: $base-font-size;
-  line-height : $base-line-height ;
-}
+
